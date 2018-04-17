@@ -41,7 +41,7 @@ export class GalleryComponent implements OnInit, OnChanges {
   
   ngOnInit() {
 
-    this.products = this.repoService.getProducts();
+    //this.products = this.repoService.getProducts();
 
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
       // If it is a NavigationEnd event re-initalise the component
