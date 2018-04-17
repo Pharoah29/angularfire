@@ -1,0 +1,13 @@
+<div class="row">
+
+  <div class="col-lg-3 col-md-3 col-xs-6 p-2" *ngFor="let user of users | async; let i = index ">
+    <div class="card bg-light">
+          
+            <div class="card-body">
+              <img class="card-img-top" style="text-align:center;"  src="{{user.avatar}}" alt="image">
+              <h4 class="card-title">{{user.first_name + ' ' + user.last_name}}</h4>
+              <p class="card-text">Email: {{user.email}}</p>
+            </div>
+    </div> 
+
+</div>
