@@ -20,7 +20,7 @@ export class FirebaseDatabaseService {
    {
       this.collection  =  this.afs.collection('users', ref => {
         
-        return ref.where("id","<",10).orderBy("id","desc");
+        return ref.where("id","<=",10).orderBy("id","desc");
       
          
         });
