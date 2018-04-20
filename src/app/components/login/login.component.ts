@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { SignInUser } from '../../models/user';
+import { AuthService } from '../../services/auth.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +11,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  user: SignInUser  = {email:'',password:''} ;
+  
+  constructor(private authService : AuthService, private router: Router, private shared: SharedService) { }
 
   ngOnInit() {
+
   }
 
+  login(){
+   
+    let logged = this.authService.login(this.user.email,this.user.password);
+    
+    logged.then(value => {
+      console.log('Nice, it worked!');
+     
+      this.shared.currentUser = this.user;
+
+      this.router.navigate(['']);
+     
+    })
+    .catch(err => {
+      console.log('Something went wrong:',err.message);
+     
+    });
+
+  }
 }

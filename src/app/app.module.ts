@@ -18,10 +18,14 @@ import { FirebaseDatabaseService } from './services/firebase-database.service';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
 import { AngularFirestore } from 'angularfire2/firestore';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { LoginGuard } from './login.guard';
+import { AuthService } from './services/auth.service';
 
 export const firebaseConfig = environment.firebaseConfig;
 
@@ -43,10 +47,10 @@ export const firebaseConfig = environment.firebaseConfig;
     FormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
-
+    AngularFireAuthModule
 
   ],
-  providers: [RepoService, SharedService, FirebaseDatabaseService, AngularFirestore],
+  providers: [RepoService, SharedService, FirebaseDatabaseService, AngularFirestore, LoginGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

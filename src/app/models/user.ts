@@ -7,3 +7,8 @@ export interface User{
     id: number;
   
   }
+
+  export interface SignInUser{
+    email: string,
+    password: string;
+  }
