@@ -12,14 +12,26 @@ export class LoginGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-        debugger;
+    
+    let success: boolean = true;
+
     let user = this.shared.currentUser;
+
+    this.firebaseAuth.authState.subscribe(data => {
+    debugger;
+        if(data && data.uid) {
+
+          return true; 
+        }
+
+        else{
+          this.router.navigate(['login']);
+
+          return false;
+        }
+    });
       
-    if (!user) {
-
-      this.router.navigate(['login']);
-    }
-
-    return (this.shared.currentUser != null);
+  
+    return (success);
   }
 }

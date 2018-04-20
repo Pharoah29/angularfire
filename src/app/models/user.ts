@@ -11,4 +11,5 @@ export interface User{
   export interface SignInUser{
     email: string,
     password: string;
+    token?: string;
   }

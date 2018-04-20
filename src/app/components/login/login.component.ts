@@ -23,9 +23,10 @@ export class LoginComponent implements OnInit {
    
     let logged = this.authService.login(this.user.email,this.user.password);
     
-    logged.then(value => {
+    logged.then(data => {
       console.log('Nice, it worked!');
-     
+    
+      this.user.token = data.uid;
       this.shared.currentUser = this.user;
 
       this.router.navigate(['']);

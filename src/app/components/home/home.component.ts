@@ -3,6 +3,7 @@ import { Repo } from '../../models/repo';
 import { RepoService } from '../../services/repo.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from '../../services/shared.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,8 @@ export class HomeComponent implements OnInit {
   constructor(private repoService: RepoService, 
               private route: ActivatedRoute,
               private router: Router, 
-              private shared: SharedService){
+              private shared: SharedService,
+              private authService: AuthService){
 
   }
 
@@ -48,6 +50,11 @@ export class HomeComponent implements OnInit {
       
      });
 
+  }
+
+  logout(){
+
+    this.authService.logout();
   }
 
 
