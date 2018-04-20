@@ -19,6 +19,9 @@ import { FirebaseDatabaseService } from './services/firebase-database.service';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 export const firebaseConfig = environment.firebaseConfig;
 
@@ -29,6 +32,9 @@ export const firebaseConfig = environment.firebaseConfig;
     GalleryComponent,
     BookmarksComponent,
     FirebaseDatabaseComponent,
+    LoginComponent,
+    HomeComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
