@@ -18,7 +18,7 @@ export class LoginGuard implements CanActivate {
     let user = this.shared.currentUser;
 
     this.firebaseAuth.authState.subscribe(data => {
-    debugger;
+ 
         if(data && data.uid) {
 
           return true; 

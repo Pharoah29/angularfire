@@ -1,7 +1,7 @@
 <body>
   <div class="container">
 
-    <form class="form-signin">
+    <form class="form-signin" #form="ngForm" novalidate>
       <h2 class="form-signin-heading"><img src="https://www.w3schools.com/howto/img_avatar.png"></h2>
       <label for="inputEmail" class="sr-only">Email address</label>
       <input type="email" id="inputEmail" name="inputEmail" [(ngModel)]="user.email" class="form-control" placeholder="Email address" required autofocus>
@@ -12,9 +12,8 @@
           <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div>
-      <button class="btn btn-lg btn-primary btn-block" type="button" (click)="login()">Sign in</button>
+      <button class="btn btn-lg btn-primary btn-block" type="button" (click)="form.valid && login()">Login</button>     
     </form>
-
   </div>
   <!-- /container -->
 </body>

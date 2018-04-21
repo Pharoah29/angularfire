@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-   
+   debugger;
     let logged = this.authService.login(this.user.email,this.user.password);
     
     logged.then(data => {
