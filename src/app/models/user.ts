@@ -5,11 +5,7 @@ export interface User{
     last_name: string;
     gender: string;
     id: number;
-  
-  }
-
-  export interface SignInUser{
-    email: string,
     password: string;
     token?: string;
+  
   }

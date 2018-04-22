@@ -41,11 +41,9 @@ export class GalleryComponent implements OnInit, OnChanges {
   
   ngOnInit() {
 
-    //this.products = this.repoService.getProducts();
-
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
       // If it is a NavigationEnd event re-initalise the component
-      if (e instanceof NavigationEnd) {debugger;
+      if (e instanceof NavigationEnd) {;
         this.items = this.shared.data;
       }
     });
@@ -55,7 +53,7 @@ export class GalleryComponent implements OnInit, OnChanges {
     // avoid memory leaks here by cleaning up after ourselves. If we  
     // don't then we will continue to run our initialiseInvites()   
     // method on every navigationEnd event.
-    if (this.navigationSubscription) {  debugger;
+    if (this.navigationSubscription) { 
        this.navigationSubscription.unsubscribe();
     }
   }  

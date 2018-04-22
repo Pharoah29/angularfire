@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { SignInUser } from '../models/user';
+import { User } from '../models/user';
+
 
 @Injectable()
 export class SharedService {
 
   public data: any;
 
-  currentUser: SignInUser;
+  currentUser: User;
 
   constructor() { }
 

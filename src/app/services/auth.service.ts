@@ -4,9 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AuthService {
-
-
-  
+ 
   constructor(private firebaseAuth: AngularFireAuth) { }
 
   login(email: string, password: string) : Promise<any> {

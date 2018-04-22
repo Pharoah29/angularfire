@@ -1,5 +1,5 @@
+import { User } from './../../models/user';
 import { Component, OnInit } from '@angular/core';
-import { SignInUser } from '../../models/user';
 import { AuthService } from '../../services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from '../../services/shared.service';
@@ -11,7 +11,7 @@ import { SharedService } from '../../services/shared.service';
 })
 export class LoginComponent implements OnInit {
 
-  user: SignInUser  = {email:'',password:''} ;
+  user: User  = {} as User;
   
   constructor(private authService : AuthService, private router: Router, private shared: SharedService) { }
 
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-   debugger;
+   
     let logged = this.authService.login(this.user.email,this.user.password);
     
     logged.then(data => {
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     
       this.user.token = data.uid;
       this.shared.currentUser = this.user;
-
+     
       this.router.navigate(['']);
      
     })
