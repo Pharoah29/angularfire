@@ -55,5 +55,7 @@ body {
 
   input.ng-touched.ng-invalid
   {
-   background-color: red;
+   border-color: red;
+   outline:none;
   }
+

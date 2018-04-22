@@ -4,15 +4,16 @@
     <form class="form-signin" #form="ngForm" novalidate>
       <h2 class="form-signin-heading"><img src="https://www.w3schools.com/howto/img_avatar.png"></h2>
       <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" name="inputEmail" [(ngModel)]="user.email" class="form-control" placeholder="Email address" required autofocus>
+      <input type="email" id="inputEmail" name="inputEmail" [(ngModel)]="user.email" class="form-control mb-2" placeholder="Email address" required autofocus>
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" id="inputPassword" name="inputPassword" [(ngModel)]="user.password" class="form-control" placeholder="Password" required>
-      <div class="checkbox">
+    <!--   <div class="checkbox">
         <label>
           <input type="checkbox" value="remember-me"> Remember me
         </label>
-      </div>
-      <button class="btn btn-lg btn-primary btn-block" type="button" (click)="form.valid && login()">Login</button>     
+      </div> -->
+      <button class="btn btn-lg btn-primary btn-block" type="button" (click)="form.valid && login()">Login</button>
+     
     </form>
   </div>
   <!-- /container -->
