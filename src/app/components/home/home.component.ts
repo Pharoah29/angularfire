@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Repo } from '../../models/repo';
 import { RepoService } from '../../services/repo.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd, RouterEvent, NavigationStart, NavigationCancel } from '@angular/router';
 import { SharedService } from '../../services/shared.service';
 import { AuthService } from '../../services/auth.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-home',
@@ -12,9 +13,14 @@ import { AuthService } from '../../services/auth.service';
 })
 export class HomeComponent implements OnInit {
 
+  loading = false;
+
+  navigationSubscription: Subscription;
+
   ngOnInit(): void {
-   
+       
   }
+
   repoItems: Repo[];
 
   constructor(private repoService: RepoService, 
@@ -28,7 +34,7 @@ export class HomeComponent implements OnInit {
   searchText = '';
 
   Search(){
-    debugger;
+  
     if(!this.searchText) return;
 
     this.shared.data = null;
@@ -55,6 +61,24 @@ export class HomeComponent implements OnInit {
   logout(){
 
     this.authService.logout();
+  }
+
+  checkRouteEvents( onStart: Function, onEnd: Function ){
+
+    this.navigationSubscription = this.router.events.subscribe((e: RouterEvent) => {
+      // If it is a NavigationEnd event re-initalise the component
+      if (e instanceof NavigationStart) {;
+        
+        onStart();
+      }
+
+      if (e instanceof NavigationEnd || e instanceof NavigationCancel || e instanceof NavigationCancel) {
+
+        onEnd();
+
+      }      
+    });
+
   }
 
 

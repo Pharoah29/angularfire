@@ -16,7 +16,7 @@ export class BookmarksComponent implements OnInit {
   ngOnInit() {
 
       this.bookmark = this.repoService.fromStorage();
-      debugger;
+    
   }
 
 
