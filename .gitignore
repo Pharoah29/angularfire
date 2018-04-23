@@ -2,5 +2,14 @@ node_modules
 e2e
 src/app/**/*.spec.ts
 dist  
+
+**/.svn
+**/.js.map
+**/.hg
+**/.DS_Store
+**/.vscode
+**/*.js
+**/*.map
+
  
 
