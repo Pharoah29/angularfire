@@ -6,7 +6,7 @@ import { SharedService } from '../../services/shared.service';
 import { Subscribable, Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import { RepoService } from '../../services/repo.service';
-import { Repo } from '../../models/repo';
+import { Repo } from '../../models/repo.model';
 
 @Component({
   selector: 'app-repo-gallery',

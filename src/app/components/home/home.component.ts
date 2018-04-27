@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Repo } from '../../models/repo';
+import { Repo } from '../../models/repo.model';
 import { RepoService } from '../../services/repo.service';
 import { ActivatedRoute, Router, NavigationEnd, RouterEvent, NavigationStart, NavigationCancel } from '@angular/router';
 import { SharedService } from '../../services/shared.service';

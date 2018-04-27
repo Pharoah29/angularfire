@@ -1,6 +1,7 @@
 import { RepoService } from './../../services/repo.service';
 import { Component, OnInit } from '@angular/core';
-import { Repo } from '../../models/repo';
+import { Repo } from '../../models/repo.model';
+
 
 @Component({
   selector: 'app-bookmarks',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseDatabaseService } from '../../services/firebase-database.service';
 import { Observable } from 'rxjs/Observable';
-import { User } from '../../models/user';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-firebase-database',
