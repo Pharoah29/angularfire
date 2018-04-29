@@ -1,20 +1,21 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
-import { environment } from './../environments/environment';
+import { environment } from "./../environments/environment";
 
-import { FirebaseDatabaseComponent } from './components/firebase-database/firebase-database.component';
+import { FirebaseDatabaseComponent } from "./components/firebase-database/firebase-database.component";
 
-import { FirebaseDatabaseService } from './services/firebase-database.service';
+import { FirebaseDatabaseService } from "./services/firebase-database.service";
 
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFirestore } from 'angularfire2/firestore';
-
+import { AngularFireModule } from "angularfire2";
+import {
+  AngularFireDatabaseModule,
+  AngularFireDatabase
+} from "angularfire2/database";
+import { AngularFireAuthModule } from "angularfire2/auth";
+import { AngularFirestore } from "angularfire2/firestore";
 
 export const firebaseConfig = environment.firebaseConfig;
-
 
 @NgModule({
   imports: [
@@ -26,5 +27,4 @@ export const firebaseConfig = environment.firebaseConfig;
   declarations: [FirebaseDatabaseComponent],
   providers: [FirebaseDatabaseService, AngularFirestore]
 })
-
-export class CoreModule { }
+export class CoreModule {}
