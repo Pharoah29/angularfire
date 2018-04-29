@@ -13,29 +13,20 @@ import { RepoService } from './services/repo.service';
 import { SharedService } from './services/shared.service';
 import { BookmarksComponent } from './components/bookmarks/bookmarks.component';
 
-import { FirebaseDatabaseComponent } from './components/firebase-database/firebase-database.component';
-import { FirebaseDatabaseService } from './services/firebase-database.service';
 
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
 
-import { AngularFirestore } from 'angularfire2/firestore';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LoginGuard } from './login.guard';
 import { AuthService } from './services/auth.service';
-
-export const firebaseConfig = environment.firebaseConfig;
-
+import { CoreModule } from './core.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     GalleryComponent,
     BookmarksComponent,
-    FirebaseDatabaseComponent,
     LoginComponent,
     HomeComponent,
     PageNotFoundComponent,
@@ -45,12 +36,9 @@ export const firebaseConfig = environment.firebaseConfig;
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule,
-    AngularFireAuthModule
-
+    CoreModule
   ],
-  providers: [RepoService, SharedService, FirebaseDatabaseService, AngularFirestore, LoginGuard, AuthService],
+  providers: [RepoService, SharedService, LoginGuard, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
