@@ -1,7 +1,7 @@
 
 
 
-<div class="row">
+<div class="container-fluid">
   <div class="jumbotron">
     <h1>Hello</h1> 
     <p class="lead">This page will show a list gallery of <strong>20</strong> selected Github repoositories</p>
@@ -15,11 +15,14 @@
 <div class="row text-center text-lg-left">
 
   <div class="col-lg-3 col-md-4 col-xs-6 p-2" *ngFor="let item of items">
-          <div class="card">
+          <div class="card bg-light">
                   <img class="card-img-top" style="text-align:center;"  src="{{item.avatarUrl}}" alt="image">
                   <div class="card-body">
                     <h4 class="card-title">{{item.name}}</h4>
                     <p class="card-text">{{item.description}}</p>
+                    <div>
+                      <a class="card-link" [routerLink]="['/gallery-item',item.id]">More Details</a>
+                    </div>
                     <a class="btn btn-primary" (click)="bookmark(item)">Bookmark</a>
                   </div>
           </div>

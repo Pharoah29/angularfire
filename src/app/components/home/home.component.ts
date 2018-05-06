@@ -44,6 +44,7 @@ export class HomeComponent implements OnInit {
       this.repoItems = data.items.map(i => {
 
             return {
+                    id: i.id,
                     name: i.name,
                     description:i.description,
                     avatarUrl: i.owner.avatar_url 

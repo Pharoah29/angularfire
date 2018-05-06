@@ -1,0 +1,11 @@
+li.link-active a,
+li.link-active a:hover,
+li.link-active a:focus {
+    background-color: #4189C7 !important;
+    color: white;
+}
+
+router-outlet {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}

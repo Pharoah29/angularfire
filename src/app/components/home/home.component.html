@@ -8,15 +8,15 @@
     <div class="navbar-collapse collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" [routerLink]="'/gallery'">Gallery<span class="sr-only">(current)</span></a>
+          <a class="nav-link" [routerLink]="'/gallery'" [routerLinkActive]="['link-active']">Gallery<span class="sr-only">(current)</span></a>
         </li>
    
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'/bookmarks'">Bookmarks</a>
+          <a class="nav-link" [routerLink]="'/bookmarks'" [routerLinkActive]="['link-active']">Bookmarks</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'/firebase'">Firebase</a>
+          <a class="nav-link" [routerLink]="'/firebase'" [routerLinkActive]="['link-active']">Firebase</a>
         </li>
         
         <li class="nav-item">
@@ -25,7 +25,7 @@
     
       </ul>
       <div class="form-inline mt-2 mt-md-0">
-        <input class="form-control mr-sm-2" type="text" [(ngModel)]="searchText" id="searchText" name="searchText" placeholder="Search" aria-label="Search">
+        <input class="form-control mr-sm-2" type="text" [(ngModel)]="searchText" id="searchText" name="searchText"  (keyup.enter)="Search()" placeholder="Search" aria-label="Search">
         <button class="btn btn-success my-2 my-sm-0" (click)="Search()">Search</button>
       </div>
      </div>
